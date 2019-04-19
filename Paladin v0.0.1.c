@@ -25,8 +25,22 @@ int main()
 {
     printf("Welcome to Fortress.\n");
     printf("Do you have an account? (Y/N)\n");
-    printf("Peter can access this wghen the stars align properly :) \n");
+    printf("Peter can access this when the stars align properly :) \n");
     
     return 0;
 }
-
+User *CreateNewUser (char *fname, char *lname, char *username, char *passwd)
+{
+    struct User *new_user;
+    new_user = malloc (sizeof (struct Node));
+    if (new_user == NULL)
+    {
+        printf ("Error creating a new node.\n");
+        exit (0);
+    }
+    new_user->first_name = fname;
+    new_user->last_name = lname;
+    new_user->userName = username;
+    new_user->password = passwd;
+    return new_user;
+}
