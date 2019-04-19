@@ -12,14 +12,14 @@ struct User {
  char *last_name;  
  char *userName;
  char *password;
-}
+}User;
 struct Person {
     int aid;
     
     char *userName;
     char *password;
     struct node *next;
-}node;
+}Person;
 
 int main()
 {
@@ -30,7 +30,3 @@ int main()
     return 0;
 }
 
-typedef struct Node
-{
-    //char* 
-}
