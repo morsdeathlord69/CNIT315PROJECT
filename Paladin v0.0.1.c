@@ -6,11 +6,16 @@
 
 #include <stdio.h>
 #include <string.h>
-
+struct User {
+ int uid;
+ char *first_name;
+ char *last_name;  
+ char *userName;
+ char *password;
+}
 struct Person {
-    int id;
-    char *first_name;
-    char *last_name;
+    int aid;
+    
     char *userName;
     char *password;
     struct node *next;
