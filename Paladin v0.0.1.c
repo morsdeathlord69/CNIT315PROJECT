@@ -29,7 +29,9 @@ int main()
     printf("Peter can access this when the stars align properly+edit:) \n");
     struct User arr_Users[50];
     //int i;
+    do{
     printf("Press 1. To enter the Details of the new user: \n");
+    printf("Press -1. To end the program: \n");
     scanf("%d",&option);
     if(option==1)
     {
@@ -69,6 +71,8 @@ int main()
     }
     printf("***************************************** \n");
     }
+}
+while(option=!-1);
     return 0;
 }
 Person *CreateNewAccount (char *username, char *passwd)
@@ -80,8 +84,6 @@ Person *CreateNewAccount (char *username, char *passwd)
         printf ("Error creating a new node.\n");
         exit (0);
     }
-    
-    
     new_userAccount->userName = username;
     new_userAccount->password = passwd;
     return new_userAccount;
