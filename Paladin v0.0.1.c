@@ -29,12 +29,11 @@ int main()
     printf("Peter can access this when the stars align properly+edit:) \n");
     struct User arr_Users[50];
     //int i;
-    do{
-    printf("Press 1. To enter the details of the new user: \n");
-    scanf("%d",option);
+    printf("Press 1. To enter the Details of the new user: \n");
+    scanf("%d",&option);
     if(option==1)
     {
-    for(int i=0;i<2;i++)
+    for(int i=0;i<1;i++)
     {
         char *First_Name=NULL;
     First_Name = malloc (sizeof (char *));
@@ -44,6 +43,7 @@ int main()
     uname=malloc(sizeof(char *));
     char *pass=NULL;
     pass=malloc(sizeof(char *));
+    printf("Enter Details for User %d \n",i+1);
         printf("Please Enter the First Name:");
         scanf("%s",First_Name);
         printf("Please Enter the Last Name:");
@@ -58,7 +58,7 @@ int main()
         arr_Users[i].username=uname;
         arr_Users[i].passwd=pass;
     }
-    for(int i=0;i<2;i++)
+    for(int i=0;i<1;i++)
     {
     printf("***************************************** \n");
     printf("User #%d \n",arr_Users[i].uid+1);    
@@ -69,8 +69,6 @@ int main()
     }
     printf("***************************************** \n");
     }
-    }
-    while(option!=-1);
     return 0;
 }
 Person *CreateNewAccount (char *username, char *passwd)
