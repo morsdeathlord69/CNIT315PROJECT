@@ -23,6 +23,7 @@ typedef struct Person {
 
 int main()
 {
+    int presentValue=-1;
     int option=0;
     printf("Welcome to Paladin.\n");
     printf("Do you have an account? (Y/N)\n");
@@ -31,13 +32,14 @@ int main()
     //int i;
     do{
     printf("Press 1. To enter the Details of the new user: \n");
+    printf("Press 2. To Login to your account: \n");
+    printf("Press 3. To display all the users \n");
     printf("Press -1. To end the program: \n");
     scanf("%d",&option);
     if(option==1)
     {
-    for(int i=0;i<1;i++)
-    {
-        char *First_Name=NULL;
+    
+    char *First_Name=NULL;
     First_Name = malloc (sizeof (char *));
     char *Last_Name=NULL;
     Last_Name = malloc (sizeof (char *));
@@ -45,7 +47,23 @@ int main()
     uname=malloc(sizeof(char *));
     char *pass=NULL;
     pass=malloc(sizeof(char *));
-    printf("Enter Details for User %d \n",i+1);
+    printf("Enter Details for User %d \n",presentValue+1);
+    for(int i=0;i<50;i++)
+    {
+        if(arr_Users[i].uid==i)
+        {
+            presentValue++;    
+        }
+        else
+        {
+            break;
+        }
+    }
+    //printf("Value Presnt at: %s",arr_Users[i].first_name);
+    printf("Present Value: %d",presentValue);
+
+for(int i=presentValue;i<presentValue+1;i++)
+{
         printf("Please Enter the First Name:");
         scanf("%s",First_Name);
         printf("Please Enter the Last Name:");
@@ -59,8 +77,9 @@ int main()
         arr_Users[i].last_name=Last_Name;
         arr_Users[i].username=uname;
         arr_Users[i].passwd=pass;
-    }
-    for(int i=0;i<1;i++)
+}
+//presentValue++;
+    for(int i=presentValue;i<presentValue+1;i++)
     {
     printf("***************************************** \n");
     printf("User #%d \n",arr_Users[i].uid+1);    
@@ -71,8 +90,22 @@ int main()
     }
     printf("***************************************** \n");
     }
+    if(option==2)
+    {
+     for(int i=0;i<presentValue;i++)
+     {
+    printf("***************************************** \n");
+    printf("User #%d \n",arr_Users[i].uid+1);    
+    printf("First Name is %s \n",arr_Users[i].first_name);
+    printf("Last Name is %s  \n",arr_Users[i].last_name);
+    printf("Username is %s  \n",arr_Users[i].username);
+    printf("Password is %s \n",arr_Users[i].passwd);    
+     }
+    printf("***************************************** \n");
+    }
+    
 }
-while(option=!-1);
+while(option!=-1);
     return 0;
 }
 Person *CreateNewAccount (char *username, char *passwd)
