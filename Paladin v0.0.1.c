@@ -92,7 +92,7 @@ for(int i=presentValue;i<presentValue+1;i++)
     }
     if(option==2)
     {
-     for(int i=0;i<presentValue;i++)
+     for(int i=0;i<presentValue+1;i++)
      {
     printf("***************************************** \n");
     printf("User #%d \n",arr_Users[i].uid+1);    
