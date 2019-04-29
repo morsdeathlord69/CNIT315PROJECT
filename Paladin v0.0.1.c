@@ -6,20 +6,22 @@
 
 #include <stdio.h>
 #include <string.h>
+typedef struct IndividualAccount {
+    int aid;
+    
+    char *userName;
+    char *password;
+    struct IndividualAccount *next;
+}IndividualAccount;
 typedef struct User{
  int uid;
  char *first_name;
  char *last_name;  
  char *username;
  char *passwd;
+ IndividualAccount ac;
 }User;
-typedef struct Person {
-    int aid;
-    
-    char *userName;
-    char *password;
-    struct Person *next;
-}Person;
+
 
 int main()
 {
@@ -29,6 +31,14 @@ int main()
     printf("Do you have an account? (Y/N)\n");
     printf("Peter can access this when the stars align properly+edit:) \n");
     struct User arr_Users[50];
+    for(int i=0;i<50;i++)
+    {
+    arr_Users[i].first_name=NULL;
+    arr_Users[i].last_name=NULL;
+    arr_Users[i].username=NULL;
+    arr_Users[i].passwd=NULL;
+    arr_Users[i].uid=NULL;
+    }
     //int i;
     do{
     printf("Press 1. To enter the Details of the new user: \n");
@@ -108,10 +118,10 @@ for(int i=presentValue;i<presentValue+1;i++)
 while(option!=-1);
     return 0;
 }
-Person *CreateNewAccount (char *username, char *passwd)
+IndividualAccount *CreateNewAccount (char *username, char *passwd)
 {
-    struct Person *new_userAccount;
-    new_userAccount = malloc (sizeof (struct Person));
+    struct IndividualAccount *new_userAccount;
+    new_userAccount = malloc (sizeof (struct IndividualAccount));
     if (new_userAccount == NULL)
     {
         printf ("Error creating a new node.\n");
